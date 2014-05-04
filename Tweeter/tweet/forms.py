@@ -1,0 +1,17 @@
+from django import forms
+
+from tweet.models import tweet, Comment
+
+
+class TweetForm(forms.ModelForm):  
+
+    class Meta:
+        model = tweet
+        fields = ('Author', 'body' )
+
+class CommentForm(forms.ModelForm):
+    
+    class Meta:
+        model = Comment
+        fields = ('commentAuthor', 'body')
+

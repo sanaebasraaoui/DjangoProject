@@ -1,0 +1,26 @@
+{% extends "registerBase.html" %}
+
+{% block content %}
+        <div id="container">
+  
+  <div id="wrapper">
+  
+  <form name="login-form" class="login-form"  action="/accounts/register/" method="post">{% csrf_token %}
+  
+  <div class="header">
+		<h1>Register form </h1>
+		<span>Fill out the form below to register</span>
+		</div>
+				<div class="content">
+		
+  {{form}}
+  </div>
+  
+  		<div class="footer">
+  
+  <input type="submit" value="Register" />
+   
+    </div>
+  </form>
+  </div>
+{% endblock %}

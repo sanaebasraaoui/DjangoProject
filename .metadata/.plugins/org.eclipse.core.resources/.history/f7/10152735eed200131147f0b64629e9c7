@@ -1,7 +1,0 @@
-from django.contrib import admin
-from tweet.models import tweet
-from userprofile.models import UserProfile
-# Register your models here.
-
-admin.site.register(tweet)
-admin.site.register(tweet)

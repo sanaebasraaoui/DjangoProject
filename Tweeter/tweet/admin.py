@@ -1,0 +1,8 @@
+from django.contrib import admin
+
+from tweet.models import tweet , Comment
+
+
+# Register your models here.
+admin.site.register(tweet)
+admin.site.register(Comment)

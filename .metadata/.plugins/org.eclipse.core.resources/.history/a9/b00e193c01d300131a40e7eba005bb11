@@ -1,8 +1,0 @@
-from django.test import TestCase
-from tweet.models import tweet
-from django.utils import timezone
-from time import time 
-from django.core.urlresolvers import reverse
-
-
-
