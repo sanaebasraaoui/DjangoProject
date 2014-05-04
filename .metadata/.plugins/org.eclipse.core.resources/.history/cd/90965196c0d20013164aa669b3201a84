@@ -1,0 +1,14 @@
+from django.conf.urls import patterns, url
+
+
+urlpatterns = patterns('',
+                       
+   url(r'^all/$', 'tweet.views.tweets'),
+   url(r'^get/(?P<tweet_id>\d+)/$', 'tweet.views.tweety')  ,                                               
+   url(r'^language/(?P<language>[a-z\-]+)/$', 'tweet.views.language'),                                     
+   url(r'^create/$', 'tweet.views.create'), 
+   url(r'^like/(?P<tweet_id>\d+)/$', 'tweet.views.like_tweet')  ,                                               
+   url(r'^add_comment/(?P<article_id>\d+)/$', 'article.views.add_comment'),
+   url(r'^delete_comment/(?P<comment_id>\d+)/$', 'article.views.delete_comment'),
+   url(r'^search/$', 'article.views.search_titles'),
+                    )

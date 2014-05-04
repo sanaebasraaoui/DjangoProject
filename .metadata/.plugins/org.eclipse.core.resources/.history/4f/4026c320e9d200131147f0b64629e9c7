@@ -1,0 +1,33 @@
+{% extends "nav.html"%}
+
+
+{% block content %}
+
+  <h2>Hi {{full_name}} you are now logged in!</h2>
+  <p>Click <a href="/accounts/logout/">here</a> to logout.</p>
+  
+  <p>Click <a href="/accounts/profile/">here</a> to edit your profile information</p>
+  
+  
+  {% extends "base.html" %}
+
+{% block content %}
+  
+  <h2>Profile</h2>
+  
+  {% for field in form %}
+    {{field.error}}
+
+  {% endfor %}
+  
+  <form action="/accounts/profile/" method="post">{% csrf_token %}
+  {{form.as_ul}}
+  
+  <input type="submit" value="Update" />
+    
+  </form>
+  
+{% endblock %}
+  
+
+{% endblock %}

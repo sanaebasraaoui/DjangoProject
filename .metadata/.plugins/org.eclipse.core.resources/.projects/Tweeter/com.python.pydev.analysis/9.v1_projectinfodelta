@@ -1,0 +1,9 @@
+INSTUPnotification.tests
+C:\Myprojects\Tweeter\notification\tests.py
+INFOS:&&1|1|2|0&&2|3|2|1&&2|4|2|1&&2|5|2|1&&2|6|2|1
+create_tweet=3
+test_tweet_detail_view=6
+notification.tests=2
+test_tweet_creation=4
+test_tweets_list_view=5
+TweetTest=1

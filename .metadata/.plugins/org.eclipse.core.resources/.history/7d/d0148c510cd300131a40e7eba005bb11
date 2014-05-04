@@ -1,0 +1,45 @@
+"""
+This file demonstrates writing tests using the unittest module. These will pass
+when you run "manage.py test".
+
+Replace this with more appropriate tests for your application.
+"""
+
+from django.test import TestCase
+from tweet.models import tweet
+from django.utils import timezone
+from time import time 
+from django.core.urlresolvers import reverse
+
+class TweetTest(TestCase):
+    def create_tweet(self, title="test tweet", body="Blah Blah Blah"):
+        return tweet.objects.create(Author=Author, 
+                                      body=body,
+                                      pub_date=timezone.now(),
+                                      likes=0)
+    
+    
+    def test_tweet_creation(self):
+        a = self.create_tweet()
+        self.assertTrue(isinstance(a, tweet))
+        self.assertEqual(a.__unicode__(), a.title)
+        
+        
+    def test_tweets_list_view(self):
+        a = self.create_tweet()
+        url = reverse('tweet.views.tweets')
+        resp = self.client.get(url)
+        
+        self.assertEqual(resp.status_code, 200)
+        self.assertIn(a.title, resp.content)
+        
+        
+    def test_tweet_detail_view(self):
+        a = self.create_article()
+        url = reverse('tweet.views.tweet', args=[a.id])
+        resp = self.client.get(url)
+        
+        self.assertEqual(reverse('tweet.views.tweet', args=[a.id]), 
+                         a.get_absolute_url())
+        self.assertEqual(resp.status_code, 200)
+        self.assertIn(a.title, resp.content)        

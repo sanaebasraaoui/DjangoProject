@@ -1,0 +1,34 @@
+
+{% extends "nav.html"%}
+
+{% block sidebar %}
+
+<div class="container-fluid">
+<ul>
+
+	<li><a href = "/tweets/all">Tweets</a></li>
+	<li><a href = "/admin"> admin</a></li>
+</ul>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<h1>{{ tweet.Author }}</h1>
+<p>{{ tweet.body }}</p>
+<p> published on : {{ tweet.date }} , liked by : {{ tweet.likes }} </p>
+<p><a href="/tweets/like/{{ tweet.id }}/">Like this tweet</a></p>
+
+<h2>Comments</h2>
+{% for c in tweet.comment_set.all %}
+<p>{{c.Author}} : {{c.body}} 
+<a href="/tweets/delete_comment/{{c.id}}">Delete</a>
+</p>
+{% endfor %}
+
+<p><a href="/tweets/add_comment/{{tweet.id}}">Add Comment</a></p>
+
+
+{% endblock %}
