@@ -1,0 +1,27 @@
+{% extends "nav.html"%}
+
+{% block content %}
+<h3>Search</h3>
+{% csrf_token %}
+<input type ="text" id ="search" name = "search">
+<ul id="search-results">
+</ul>
+
+{% if tweet.count != 20 %}
+
+{% for tweet in tweets %}
+<div>
+<h2><a href='/tweets/get/{{ tweet.id }}/'>  {{ tweet.Author }}</a>  </h2>
+<p> {{ tweet.body|upper|truncatewords:"140" }}</p>
+<p> published on : {{ tweet.date }} , liked by : {{ tweet.likes }} </p>
+<p><a href="/tweets/like/{{ tweet.id }}/">Like this tweet</a></p>
+
+</div>
+{% endfor %}
+
+{% else %}
+ 
+ <h2><a href=""> Come on make your firs tweet</a>  </h2>
+ 
+{% endif %}
+{% endblock %}

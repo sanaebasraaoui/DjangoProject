@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Tweeter/tweet/templates/create_article.html&apos; to &apos;create_tweet&apos;" description="Rename resource &apos;create_article.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="tweet/templates/create_article.html" name="create_tweet" stamp="1395352982749" updateReferences="true"/>
+</session>

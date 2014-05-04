@@ -1,0 +1,11 @@
+{% if tweets.count > 0 %}
+
+{% for tweet in tweets %}
+    <li><a href="{{ tweet.object.get_absolute_url }}">{{ tweet.object.title }}</a></li>
+{% endfor %}
+
+{% else %}
+
+<li>None to show!</li>
+
+{% endif %}
