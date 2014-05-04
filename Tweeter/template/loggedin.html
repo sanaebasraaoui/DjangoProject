@@ -8,7 +8,24 @@
   
   <p>Click <a href="/accounts/profile/">here</a> to edit your profile information</p>
   
-  
+  {% if tweet.count != 20 %}
+
+{% for tweet in tweets %}
+<div>
+<h2><a href='/tweets/get/{{ tweet.id }}/'>  {{ tweet.Author }}</a>  </h2>
+<p> {{ tweet.body|upper|truncatewords:"140" }}</p>
+<p> published on : {{ tweet.date }} , liked by : {{ tweet.likes }} </p>
+<p><a href="/tweets/like/{{ tweet.id }}/">Like this tweet</a></p>
+
+</div>
+{% endfor %}
+
+{% else %}
+ 
+ <h2><a href=""> Come on make your firs tweet</a>  </h2>
+ 
+{% endif %}
+
   
   
 
